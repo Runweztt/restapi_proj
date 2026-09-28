@@ -3,7 +3,7 @@
 # override with PORT=9000, API_USERNAME=..., API_PASSWORD=..., EXISTING_ID=...
 
 PORT="${PORT:-8000}"
-BASE="http://localhost:${PORT}"
+BASE="http://127.0.0.1:${PORT}"
 USER="${API_USERNAME:-admin}"
 PASS="${API_PASSWORD:-password123}"
 EXISTING_ID="${EXISTING_ID:-1}"
@@ -40,7 +40,7 @@ echo "$POST_OUT"
 echo
 
 # pull the new id out of the response body, works for {"id": ..} or {"transaction": {"id": ..}}
-NEW_ID=$(printf '%s' "$POST_OUT" | sed '1,/^\r\{0,1\}$/d' | python3 -c '
+NEW_ID=$(printf "%s" "$POST_OUT" | sed -n '/^\r\{0,1\}$/,$p' | python -c '
 import json, sys
 try:
     d = json.load(sys.stdin)
