@@ -1,6 +1,11 @@
 **Team participation sheet:** [Task sheet](https://docs.google.com/spreadsheets/d/1UfplZzWEAz3vaYvWOnUa6ftfkUAlF84FQNPcENlbFKg/edit?usp=sharing)
 https://docs.google.com/spreadsheets/d/1UfplZzWEAz3vaYvWOnUa6ftfkUAlF84FQNPcENlbFKg/edit?usp=sharing
 
+## Documentation
+
+- [API documentation](docs/api_docs.md): every endpoint with request, response and error examples
+- [Project report (PDF)](REST_API_Report.pdf): API security introduction, endpoint documentation, DSA results and Basic
+
 # MoMo SMS Transactions REST API
 
 A secure REST API for mobile money SMS transaction data, built in plain Python with `http.server`. It parses `modified_sms_v2.xml` into JSON, exposes full CRUD endpoints protected by HTTP Basic Authentication, and compares linear search against dictionary lookup for finding records.
@@ -169,7 +174,4 @@ The API uses dictionary lookup for all id-based operations. The full results tab
 
 Basic Auth is implemented as required, but it is weak on its own: credentials are only base64-encoded, sent with every request, and never expire. In production this API should run over HTTPS and move to token-based authentication (JWT or OAuth2) with rate limiting. See the report for the full reflection.
 
-## Documentation
-
-- [API documentation](docs/api_docs.md): every endpoint with request, response and error examples
-- [Project report (PDF)](REST_API_Report.pdf): API security introduction, endpoint documentation, DSA results and Basic Auth reflection
+ 
