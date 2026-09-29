@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# run the server first (python api/server.py), then: bash tests/test_api.sh
-# override with PORT=9000, API_USERNAME=..., API_PASSWORD=..., EXISTING_ID=...
 
 PORT="${PORT:-8000}"
 BASE="http://127.0.0.1:${PORT}"
