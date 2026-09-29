@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 MoMo SMS REST API
-Plain http.server implementation — CRUD over dsa/parsed_transactions.json,
 secured with Basic Auth (api/auth.py) and validated (api/validation.py).
 """
 
@@ -24,7 +23,7 @@ def load_transactions(path):
 
 
 TRANSACTIONS = load_transactions(DATA_FILE)
-LOOKUP = {t["id"]: t for t in TRANSACTIONS}   # dict keyed by id — O(1) lookup, not a loop
+LOOKUP = {t["id"]: t for t in TRANSACTIONS}   
 
 
 def next_id():
