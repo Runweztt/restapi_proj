@@ -16,7 +16,7 @@ A secure REST API for mobile money SMS transaction data, built in plain Python w
 |---|---|
 | IRADUKUNDA CYUSA Kevin | Data parsing & DSA (search algorithms) |
 | UWERA Sylvie | API implementation & documentation |
-| AMARIKWA Emmanuel | Authentication, security & testing |
+| Emmanuel Amarikwa | Authentication, security & testing |
 
 ## Features
 
