@@ -6,6 +6,8 @@ USER="${API_USERNAME:-admin}"
 PASS="${API_PASSWORD:-password123}"
 EXISTING_ID="${EXISTING_ID:-1}"
 JSON="Content-Type: application/json"
+# python3 on mac/linux, python on windows
+PY=$(command -v python3 || command -v python)
 
 label() {
     echo
@@ -38,7 +40,7 @@ echo "$POST_OUT"
 echo
 
 # pull the new id out of the response body, works for {"id": ..} or {"transaction": {"id": ..}}
-NEW_ID=$(printf "%s" "$POST_OUT" | sed -n '/^\r\{0,1\}$/,$p' | python -c '
+NEW_ID=$(printf "%s" "$POST_OUT" | sed -n '/^\r\{0,1\}$/,$p' | $PY -c '
 import json, sys
 try:
     d = json.load(sys.stdin)
